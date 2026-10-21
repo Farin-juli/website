@@ -1,0 +1,178 @@
+
+/*
+ *	CSS style sheet definitions
+ */
+@font-face
+{
+	font-display: fallback;
+	font-family: 'Roboto-Regular'; 
+	src: url('font/Roboto-Regular.woff') format('woff');
+}
+
+/*
+ * 	It's necessary using :root and :host
+ */
+:root,:host
+{
+	/*
+	 *	Support light and dark mode
+	 */
+	color-scheme: light dark;
+
+	/*
+	 *	Basic font declarations
+	 */
+	--fs-text: 1rem;
+	--fs-header: 1.75rem;
+	--font-family: Roboto-Regular;
+
+	/*
+	 *	Use HSL-Format for this basic colors
+	 */
+	--dark-color: 0,0%,0%;
+	--light-color: 0,0%,100%;
+	--primary-color: 170,5%,25%;
+    --secondary-color: 210,40%,20%;
+}
+
+body
+{
+	font-size: var(--fs-text);
+	font-weight: var(--fw-300);
+	font-family: var(--font-family);
+}
+
+/*
+ *	Adapt font-sizes for smartphone displays
+ */
+:is(.phone,.tablet) .override
+{
+	--fs-text: 1.25rem;
+	--fs-header: 2rem;
+}
+
+/*
+ *  Adapt Header to left for phones
+ */
+.phone #trading-abos
+{
+    text-align: left;
+}
+
+/*
+ *	Navigation
+ */
+.override .nav-label .nav-icon-open svg
+{
+	stroke: hsl(var(--light-color));
+}
+.override .nav-label .nav-icon-close svg
+{
+	stroke: hsl(var(--light-color));
+}
+.override .nav-grid
+{
+	background: var(--primary-dark);
+	transition: all .6s ease-in-out;
+}
+.override :target .nav-grid
+{
+	height: 19.25rem;
+	transition: all .6s ease-in-out;
+	border: 1px solid var(--primary-light);
+}
+.override .nav-grid a.shape-nav
+{
+	font-weight: 600;
+	font-size: 1.125rem;
+	text-decoration: none;
+	color: var(--light-dark);
+	border: 1px solid var(--dark-light);
+}
+.override .nav-grid a.shape-nav:hover
+{
+	color: white;
+	background-color: var(--secondary-dark);
+}
+
+/*
+ *	Design shape buttons
+ */
+.override a.shape
+{
+	border-radius: .25rem;
+	color: hsl(var(--light-color));
+	background: var(--secondary-dark);
+	padding: calc(.5 * var(--padding)) calc(.75 * var(--padding));
+}
+.override a.shape:after, a.shape:before
+{
+	top: 0;
+	left: 0;
+	width: 0;
+	z-index: -1;
+	content: '';
+	height: 100%;
+	position: absolute;
+}
+.override a.shape:after
+{
+	width: 100%;
+	border-radius: inherit;
+	background-color: var(--secondary-light);
+}
+.override a.shape:before
+{
+	background-color: var(--secondary-dark);
+}
+.override a.shape:has(.icon):before
+{
+	min-width: calc(2 * var(--utf-icon) + .25rem);
+	border-radius: calc(2 * var(--utf-icon) + .25rem);
+}
+.override a.shape:has(.icon.before):before
+{
+	width: calc(1.5 * var(--padding) + var(--icon-width));
+	border-radius: calc(1.5 * var(--padding) + var(--icon-width));
+}
+.override a.shape:hover:before
+{
+	width: 100%;
+	transition: width 1.6s cubic-bezier(.23,1,.32,1);
+}
+.override a.shape .icon:before
+{
+	margin-right: calc(.75 * var(--utf-icon));
+}
+
+/*
+ *	Slider
+ */
+.override slider > label svg
+{
+	fill: var(--light-dark);
+}
+
+/*
+ *	Footer
+ */
+.override footer
+{
+	color: var(--dark);
+	background-color: var(--primary-dark);
+}
+.override footer a
+{
+	color: inherit;
+	padding: .125rem 0;
+}
+.override footer h5
+{
+	font-size: .75rem;
+}
+
+/*
+ *	Colors on dark mode
+ */
+@media (prefers-color-scheme: dark)
+{}
