@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Tab</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+:root
+{
+	--bg-color: #fff;
+	--tab-height: 2.5rem;
+	--border-color: #dadae0;
+}
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 1rem;
+	font-family: Lato, tahoma;
+	box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+body
+{
+	padding: 10px;
+	overflow: hidden;
+	ackground: #bbb;
+}
+img
+{
+	padding: 20px 0;
+	display: inline-block;
+}
+.flex-middle
+{
+	display: flex;
+	align-items: center;
+}
+section.frame
+{
+	left: 10px;
+	right: 10px;
+	top: 30px;
+	bottom: 50px;
+	overflow: hidden;
+	position: absolute;
+}
+section[type='_tab_']
+{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	white-space: nowrap;
+	display: inline-block;
+	order: 1px solid red;
+}
+section[type='_tab_'] > section
+{
+	display: inline;
+}
+section[type='_tab_'] > section > input
+{
+	display: none;
+}
+section[type='_tab_'] > section > label
+{
+	top: 0px;
+	z-index: 0;
+	float: left;
+	padding: 0 2rem;
+	font-size: 1rem;
+	overflow: hidden;
+	position: relative;
+	background: #dee3e6;
+	text-overflow: ellipsis;
+	height: var(--tab-height);
+	min-height: var(--tab-height);
+	border: 1px solid var(--border-color);
+	border-radius: 10px 10px 0 0;
+	border-width: 1px 1px 0 1px;
+}
+section[type='_tab_'] > section > div
+{
+	z-index: 1;
+	float: unset;
+	width: 100%;
+	display: block;
+	overflow: auto;
+	background: #fff;
+	padding: 5px 10px;
+	position: absolute;
+	visibility: hidden;
+	white-space: initial;
+	border-radius: 0 5px 2px 2px;
+	top: calc(var(--tab-height) - 1px);
+	border: 1px solid var(--border-color);
+	height: calc(100% - var(--tab-height));
+}
+section[type='_tab_'] > section > input:checked ~ div
+{
+	z-index: 2;
+	visibility: visible;
+	background: var(--bg-color);
+}
+section[type='_tab_'] > section > input:checked ~ label
+{
+	z-index: 3;
+	background: var(--bg-color);
+}
+
+section[type='_tab_'] > section > label > ._icon_:first-child
+{
+	width: 32px;
+	height: 32px;
+	padding: 0 5px;
+	margin-left: -1.5rem;
+}
+</style>
+<script type="text/javascript"></script>
+</head>
+<body onload='nit()'>
+<section class='frame'>
+<section type='_tab_'>
+	<section>
+		<input name='_tab_' type='radio' id='t1' checked>
+		<label for='t1' class='flex-middle'>
+		<svg xmlns="http://www.w3.org/2000/svg" class="_icon_" viewBox="0 0 32 32">
+		<path fill="#abc" stroke="#000" stroke-width="1.5" d="M27 15 L27 30 2 30 2 5 17 5 M30 6 L26 2 9 19 7 25 13 23 Z M22 6 L26 10 Z M9 19 L13 23Z"></path>
+		</svg>Entwürfe</label>
+		<div>One morning, when Gregor Samsa woke
+		from troubled dreams, he found himself
+		transformed in his bed into a horrible
+		vermin. He lay on his armour-like back,
+		and if he lifted his head a little he could
+		see his brown belly, slightly domed and
+		sOne morning, when Gregor Samsa woke
+		from troubled dreams, he found himself
+		transformed in his bed into a horrible
+		vermin. He lay on his armour-like back,
+		and if he lifted his head a little he could
+		see his brown belly, slightly domed and
+		sectionided by arches into stiff sections
+		ectionided by arches into stiff sections.
+		One morning, when Gregor Samsa woke
+		<img eight='300px' src='Skulptur.jpg'>
+		from troubled dreams, he found himself
+		transformed in his bed into a horrible
+		vermin. He lay on his armour-like back,
+		and if he lifted his head a little he could
+		see his brown belly, slightly domed and
+		sOne morning, when Gregor Samsa woke
+		from troubled dreams, he found himself
+		transformed in his bed into a horrible
+		vermin. He lay on his armour-like back,
+		and if he lifted his head a little he could
+		see his brown belly, slightly domed and
+		sectionided by arches into stiff sections
+		ectionided by arches into stiff sections.</div>
+	</section>
+	<section>
+	 <input name='_tab_' type='radio' id='t2'>
+		<label for='t2' class='flex-middle'>
+		<svg xmlns="http://www.w3.org/2000/svg" class="_icon_" viewBox="0 0 32 32">
+		<path fill="#444" d="M8 19c-2 0-4-2-4-4s2-4 4-4 4 2 4 4-2 4-4 4zM23 21c-2 0-4 2-4 4s2 4 4 4 4-2 4-4-2-4-4-4zM23 11c-2 0-4-2-4-4s2-4 4-4 4 2 4 4-2 4-4 4zM11 17l-1 1 10 6 1-1zM20 8l1 1-10 5-1-1z"></path>
+		</svg>Veröffentlichungen</label>
+		<div>Hier stehen Informationen zu den Funktionen
+		<img src='Screenshot_2020-06-19-06-56-51.png'>
+		</div>
+	</section>
+	<section>
+		<input name='_tab_' type='radio' id='t4'>
+		<label for='t4' class='flex-middle'>
+		<svg class="_icon_" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+		<path fill="#444" d="M28 2a1 1 0 0 0-1-1h-22a1 1 0 0 0-1 1v1h24zM30 6a1 1 0 0 0-1-1h-26a1 1 0 0 0-1 1v1h28zM30 9H2A2 2 0 0 0 0 11v18A2 2 0 0 0 2 31h28A2 2 0 0 0 32 29V11A2 2 0 0 0 30 9zM6.5 12.5a3 3 0 1 1-3 3 3 3 0 0 1 3-3zM28 27H4l7.5-7.5a.5.5 0 0 1 1 0l3.5 3.5L21 18a.5.5 0 0 1 1 0L28 24z"></path>
+		</svg>Bilder</label>
+		<div>One morning, when Gregor Samsa woke
+		from troubled dreams, he found himself
+		transformed in his bed into a horrible
+		vermin. He lay on his armour-like back,
+		and if he lifted his head a little he could
+		see his brown belly, slightly domed and
+		sOne morning, when Gregor Samsa woke
+		from troubled dreams, he found himself
+		transformed in his bed into a horrible
+		vermin. He lay on his armour-like back,
+		and if he lifted his head a little he could
+		see his brown belly, slightly domed and
+		sectionided by arches into stiff sections
+		sOne morning, when Gregor Samsa woke
+		from troubled dreams, he found himself
+		transformed in his bed into a horrible
+		vermin. He lay on his armour-like back,
+		and if he lifted his head a little he could
+		</div>
+	</section>
+	<section>
+		<input name='_tab_' type='radio' id='t5'>
+		<label for='t5' class='flex-middle'>
+		<svg class="_icon_" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+		<path fill="#000" stroke="#000" d="M5.5 17.5 4 22h-2L7 8H9l5 12h-2l-1-2H5zm1-1h5L8 10 6 16zM12 21 10 26h-2L17 5H19l9 22h-2l-2-6H12zm1-2h10L18 6 13 19z"></path>
+		</svg>Schriften</label>
+		<div>Erfindergeist wird belohnt: Das verspricht
+		zumindest Elon Musk. Wer die beste Erfindung vorlegt,
+		um CO2 zu binden, soll vom Tesla-Milliardär 100 Millionen
+		Dollar bekommen. Diese Vorschläge trudelten schon ein.
+		</div>
+	</section>
+</section>
+</section>
+</body>
+</html>
